@@ -1,6 +1,6 @@
 {
   "name": "@mr42/version-comparator",
-  "version": "0.1.1",
+  "version": "0.2.2",
   "description": "A package providing utility functions to compare different version strings.",
   "main": "./dist/version-comparator.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "test": "ts-mocha tests/**/*.test.ts",
     "coverage": "nyc npm test",
     "lint": "eslint --ext .ts,.js .",
-    "publish": "npm run build && npm run test && npm run coverage && npm run lint && npm publish --access public"
+    "publish-job": "npm run build && npm run test && npm run coverage && npm run lint && npm publish --access public"
   },
   "files": [
     "dist",
