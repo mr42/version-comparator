@@ -9,7 +9,7 @@ export function compare(version: string, otherVersion: string) {
     if (result !== 0) return result;
   }
   // If the first k parts are equal compare the length
-  return v1.length == v2.length ? 0 : v1.length < v2.length ? -1 : 1;
+  return v1.length === v2.length ? 0 : v1.length < v2.length ? -1 : 1;
 }
 
 function compareVersionPart(
