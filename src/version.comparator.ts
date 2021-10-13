@@ -22,6 +22,11 @@ export function gte(version: string, otherVersion: string): boolean {
   return comp !== -1;
 }
 
+export function gt(version: string, otherVersion: string): boolean {
+  const comp = compare(version, otherVersion);
+  return comp === 1;
+}
+
 function compareVersionPart(
   versionPart1: string,
   versionPart2: string
