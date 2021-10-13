@@ -1,4 +1,4 @@
-export function compare(version: string, otherVersion: string) {
+export function compare(version: string, otherVersion: string): number {
   // Split the version into its parts, e.g. '5.06' -> ['5', '06'],
   const v1 = version.split('.');
   const v2 = otherVersion.split('.');
@@ -10,6 +10,11 @@ export function compare(version: string, otherVersion: string) {
   }
   // If the first k parts are equal compare the length
   return v1.length === v2.length ? 0 : v1.length < v2.length ? -1 : 1;
+}
+
+export function lte(version: string, otherVersion: string): boolean {
+  const comp = compare(version, otherVersion);
+  return comp !== 1;
 }
 
 function compareVersionPart(
