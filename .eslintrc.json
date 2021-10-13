@@ -19,6 +19,7 @@
   "rules": {
     "unused-imports/no-unused-imports-ts": 2,
     "no-useless-constructor": "off",
+    "no-unused-expressions": "off",
     "@typescript-eslint/no-useless-constructor": ["error"]
   }
 }
