@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { gt, gte, lt, lte } from '../src/version.comparator';
+import {eq, gt, gte, lt, lte} from '../src/version.comparator';
 import { compare } from '../dist/version.comparator';
 
 describe('version comparator comparison ', (): void => {

@@ -32,6 +32,11 @@ export function lt(version: string, otherVersion: string): boolean {
   return comp === -1;
 }
 
+export function eq(version: string, otherVersion: string): boolean {
+  const comp = compare(version, otherVersion);
+  return comp === 0;
+}
+
 function compareVersionPart(
   versionPart1: string,
   versionPart2: string
