@@ -8,6 +8,7 @@
     "build": "tsc",
     "test": "ts-mocha tests/**/*.test.ts",
     "coverage": "nyc npm test",
+    "cover:report": "nyc report --reporter=lcov --reporter=text",
     "lint": "eslint --ext .ts,.js .",
     "prepare": "rm -r dist && npm run build && npm run test && npm run coverage && npm run lint"
   },
