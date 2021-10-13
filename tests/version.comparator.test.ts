@@ -102,3 +102,20 @@ describe('version comparator lt', (): void => {
     expect(actual).false;
   });
 });
+
+describe('version comparator eq', (): void => {
+  it('returns true if v1 == v2', (): void => {
+    const actual = eq('5.06', '5.06');
+    expect(actual).true;
+  });
+
+  it('returns false if v1 < v2', (): void => {
+    const actual = eq('5.04', '5.06');
+    expect(actual).false;
+  });
+
+  it('returns false if v1 > v2', (): void => {
+    const actual = eq('5.06', '5.04');
+    expect(actual).false;
+  });
+});
