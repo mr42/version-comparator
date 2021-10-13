@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import {eq, gt, gte, lt, lte} from '../src/version.comparator';
+import { eq, gt, gte, lt, lte } from '../src/version.comparator';
 import { compare } from '../dist/version.comparator';
 
 describe('version comparator comparison ', (): void => {
@@ -67,11 +67,21 @@ describe('version comparator gte', (): void => {
     const actual = gte('5.04', '5.06');
     expect(actual).false;
   });
+
+  it('returns false if v1.length < v2.length ', (): void => {
+    const actual = gte('5.04', '5.4.1');
+    expect(actual).false;
+  });
 });
 
 describe('version comparator gt', (): void => {
   it('returns true if v1 > v2', (): void => {
     const actual = gt('5.06', '5.04');
+    expect(actual).true;
+  });
+
+  it('returns true if v1.length > v2.length ', (): void => {
+    const actual = gt('5.4.1', '5.04');
     expect(actual).true;
   });
 
@@ -82,6 +92,11 @@ describe('version comparator gt', (): void => {
 
   it('returns false if v1 < v2', (): void => {
     const actual = gt('5.04', '5.06');
+    expect(actual).false;
+  });
+
+  it('returns false if v1.length < v2.length ', (): void => {
+    const actual = gt('5.04', '5.4.1');
     expect(actual).false;
   });
 });
